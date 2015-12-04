@@ -42898,7 +42898,7 @@ githubUserSearch.controller('GitUserSearchController', ['Search', function(Searc
       })
   };
 }]);
-githubUserSearch.factory('Search', ['$http', 'access_token', function($http, access_token) {
+githubUserSearch.factory('Search', ['$http', function($http) {
   var queryUrl = 'https://api.github.com/search/users';
   return {
     query: function(searchTerm) {
@@ -42906,7 +42906,6 @@ githubUserSearch.factory('Search', ['$http', 'access_token', function($http, acc
         url: queryUrl,
         method: 'GET',
         params: {
-          'access_token': access_token,
           'q': searchTerm
         }
       });
@@ -42921,7 +42920,7 @@ githubUserSearch.factory('Search', ['$http', 'access_token', function($http, acc
 //
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file.
-//
+// 
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
