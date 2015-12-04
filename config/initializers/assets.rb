@@ -14,4 +14,3 @@ Rails.application.config.assets.precompile += %w( angular-resource/angular-resou
 Rails.application.config.assets.precompile += %w( app.js )
 Rails.application.config.assets.precompile += %w( searchFactory.js )
 Rails.application.config.assets.precompile += %w( gitUserSearchController.js )
-Rails.application.config.assets.precompile += %w( config.js )
