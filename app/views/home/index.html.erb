@@ -3,15 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Github user search</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/gitUserSearchController.js"></script>
-    <script src="js/searchFactory.js"></script>
-    <script src="js/config.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <%= javascript_include_tag "jquery.js" %>
+    <%= javascript_include_tag "angular.js" %>
+    <%= javascript_include_tag "angular-resource.js" %>
+    <%= javascript_include_tag "app.js" %>
+    <%= javascript_include_tag "searchFactory.js" %>
+    <%= javascript_include_tag "gitUserSearchController.js" %>
+    <%= javascript_include_tag "config.js" %>
   </head>
 
   <body ng-controller="GitUserSearchController as searchCtrl">
@@ -20,7 +18,7 @@
         <input type="text" ng-model="searchCtrl.searchTerm" ng-change="searchCtrl.doSearch()" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 750, 'blur': 0} }">
         <button class="btn" ng-click="searchCtrl.doSearch()">Search</button>
       </form>
-      <div>{{searchCtrl.searchTerm}}: {{searchCtrl.searchResult}}</div>
+      <div>{{searchCtrl.searchTerm}}</div>
       <ul class="list-group">
         <li ng-repeat="user in searchCtrl.searchResult.items">
           <img ng-src="{{user.avatar_url}}&s=50">

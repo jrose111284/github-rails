@@ -2,10 +2,16 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
-
+Rails.application.config.assets.precompile += %w( jquery/dist/jquery.js)
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( angular/angular.js )
+Rails.application.config.assets.precompile += %w( angular-resource/angular-resource.js )
+Rails.application.config.assets.precompile += %w( app.js )
+Rails.application.config.assets.precompile += %w( searchFactory.js )
+Rails.application.config.assets.precompile += %w( gitUserSearchController.js )
+Rails.application.config.assets.precompile += %w( config.js )
